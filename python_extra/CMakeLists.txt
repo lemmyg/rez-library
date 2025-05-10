@@ -20,7 +20,7 @@ execute_process(
 )
 
 execute_process(
-    COMMAND ${Python_EXECUTABLE} -m pip install --index-url=https://download.qt.io/official_releases/QtForPython/ --trusted-host download.qt.io shiboken6_generator==6.5.3 --force-reinstall
+    COMMAND ${PIP3} install --index-url=https://download.qt.io/official_releases/QtForPython/ --trusted-host download.qt.io shiboken6==6.5.3 shiboken6_generator==6.5.3 --force-reinstall
     RESULT_VARIABLE pip_result
 )
 
