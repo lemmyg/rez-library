@@ -10,7 +10,7 @@ requires = [
     ] 
 
 variants = [
-    ["platform-osx", 'arch-x86_64', 'os-osx-15.4.1'],
+    ["platform-osx"],
 ]
 
 
@@ -21,7 +21,10 @@ with scope("config") as config:
 def commands():   
     # Set our Python paths
     env.PATH.prepend("{root}/bin")
-    env.LD_LIBRARY_PATH.prepend("{root}/lib")
+    if system.platform == "osx":
+        env.DYLD_LIBRARY_PATH.prepend("{root}/lib")
+    else:
+        env.LD_LIBRARY_PATH.prepend("{root}/lib")
     env.PYTHONPATH.prepend("{root}/lib/python3.11/site-packages")
     env.PKG_CONFIG_PATH.prepend("{root}/lib/pkgconfig")
     env.Python3_EXECUTABLE.set("{root}/bin/python3.11")

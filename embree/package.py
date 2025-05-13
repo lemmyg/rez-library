@@ -17,8 +17,8 @@ with scope("config") as config:
 
 
 def commands():
-    env.PATH.prepend("{root}")
     env.PATH.prepend("{root}/bin")
+    env.EMBREE_LOCATION = "{root}"
     if system.platform == "osx":
         env.DYLD_LIBRARY_PATH.prepend("{root}/lib")
     else:

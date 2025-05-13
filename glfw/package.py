@@ -13,5 +13,5 @@ def commands():
     else:
         env.LD_LIBRARY_PATH.prepend("{root}/lib")
     if building:
-        env.CMAKE_MODULE_PATH.append("{root}/lib/cmake/glfw3/")
         env.PKG_CONFIG_PATH.append("{root}/lib/pkgconfig")
+    env.CMAKE_MODULE_PATH.prepend("{root}/lib/cmake/glfw3/")

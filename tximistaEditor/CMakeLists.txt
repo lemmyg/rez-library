@@ -3,6 +3,14 @@ project(tximistaEditor)
 #include(RezBuild)
 include(ExternalProject)
 
+find_package(OpenGL REQUIRED)
+message(STATUS "OpenGL_INCLUDE_DIR: ${OPENGL_INCLUDE_DIR}")
+message(STATUS "OPENGL_LIBRARIES: ${OPENGL_LIBRARIES}")
+#Set deployment target for macOS
+if(APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "15.2" CACHE STRING "Minimum OS X deployment version")
+endif()
+
 ExternalProject_add(
     tximistaEditor
     SOURCE_DIR "${CMAKE_SOURCE_DIR}/../../tximistaeditor"

@@ -17,8 +17,8 @@ ExternalProject_Add(shiboken
     GIT_SUBMODULES_RECURSE 1
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
-    COMMAND ${Python_EXECUTABLE} setup.py install --qtpaths=${QTPATHS_EXECUTABLE} --verbose-build --internal-build-type=shiboken6
-    COMMAND ${Python_EXECUTABLE} setup.py install --qtpaths=${QTPATHS_EXECUTABLE} --verbose-build --internal-build-type=shiboken6-generator
+    COMMAND ${Python_EXECUTABLE} setup.py install --qtpaths=${QTPATHS_EXECUTABLE} --verbose-build --internal-build-type=shiboken6 --macos-deployment-target=15.2
+    COMMAND ${Python_EXECUTABLE} setup.py install --qtpaths=${QTPATHS_EXECUTABLE} --verbose-build --internal-build-type=shiboken6-generator --macos-deployment-target=15.2
     BUILD_IN_SOURCE 1
 )
 

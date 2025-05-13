@@ -7,8 +7,8 @@ authors = ["lemmyg"]
 description = """tximistaEditor is a full featured template engine for Python."""
 
 requires = [
-    "python-3.11",
     "cmake",
+    "python-3.11",
     "glfw-3.3.8",
     "glm-1.0.1",
     "tbb-2020.3",
@@ -23,7 +23,7 @@ requires = [
     "oidn-1.4.3",
     "usd-24.08",
     "qt-6.5.3",
-    "PySide6-6.5.2",
+    #"PySide6-6.5.2",
 ]
 
 variants = [

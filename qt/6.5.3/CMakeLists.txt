@@ -9,6 +9,11 @@ include(ExternalProject)
 include(ProcessorCount)
 ProcessorCount(ncpus)
 
+# Set deployment target for macOS
+if(APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "15.2" CACHE STRING "Minimum OS X deployment version")
+endif()
+
 # Build QtBase (includes QtCore, QtGui, and QtWidgets)
 ExternalProject_add(
     qtbase

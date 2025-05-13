@@ -3,6 +3,8 @@ project(boost)
 include(RezBuild)
 include(ExternalProject)
 
+find_package(Python3 3.11 EXACT REQUIRED COMPONENTS Development)
+
 
 # Configure user-config.jam
 configure_file(
@@ -17,30 +19,25 @@ ExternalProject_Add(boost
     BUILD_COMMAND ./b2 install
         --prefix=<INSTALL_DIR>
         -j16
-        address-model=64
         link=shared  
         runtime-link=shared
         threading=multi
         variant=release
         cxxstd=17
-        --with-atomic
-        --with-regex
-        --with-python
-        --with-thread
-        --with-filesystem
-        --with-program_options
-        --with-serialization
-        --with-test
+        #--with-thread
+        #--with-atomic
+        #--with-regex
+        #--with-python
+        #--with-filesystem
+        #--with-program_options
+        #--with-serialization
+        #--with-test
         --user-config=${CMAKE_CURRENT_SOURCE_DIR}/user-config.jam
     BUILD_IN_SOURCE 1
     INSTALL_COMMAND ""
     INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/install
 )
 
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/install/include/boost DESTINATION include)
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/install/lib/ DESTINATION lib)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/install/ DESTINATION .)
 
-rez_install_files(
-    cmake/
-    DESTINATION .
-)
+

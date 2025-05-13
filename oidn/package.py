@@ -28,3 +28,6 @@ def commands():
         env.DYLD_LIBRARY_PATH.prepend("{root}/lib")
     else:
         env.LD_LIBRARY_PATH.prepend("{root}/lib")
+
+    if building:
+        env.CMAKE_MODULE_PATH.append("{root}/lib/cmake/OpenImageDenoise-{version}")

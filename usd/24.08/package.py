@@ -12,8 +12,10 @@ requires = [
     "cmake",
     "tbb-2020.3",
     "python-3.11",
-    "opensubdiv-3.1.1",
-
+    "openSubdiv-3.6.0",
+    "glew-2.1.0",
+    "glfw-3.3.8",
+    "embree-3.10.0",
 ]
 
 variants = [
@@ -47,8 +49,10 @@ with scope("config") as config:
 
 
 def commands():
+    # Add root path first
     env.CMAKE_PREFIX_PATH.prepend("{root}")
     env.PATH.prepend("{root}/bin")
+    env.PYTHONPATH.prepend("{root}/lib/python")
     if system.platform == "osx":
         env.DYLD_LIBRARY_PATH.prepend("{root}/lib")
     else:

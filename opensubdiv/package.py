@@ -3,9 +3,9 @@
 from rez.utils.lint_helper import env, building, scope  # make linter happy
 
 
-name = "opensubdiv"
+name = "openSubdiv"
 
-version = "3.1.1"
+version = "3.6.0"
 
 authors = ['lemmyg']
 
@@ -28,6 +28,7 @@ def commands():
     else:
         env.LD_LIBRARY_PATH.append("{root}/lib")
     env.PATH.append("{root}/bin")
+    env.OPENSUBDIV_ROOT_DIR = "{root}"
 
     if building:
         env.CMAKE_MODULE_PATH.append("{root}/cmake")
