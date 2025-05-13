@@ -1,16 +1,12 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
-			"path": "../OpenUSD"
-		},
-		{
+			"name": "tximistaeditor",
 			"path": "../tximistaeditor"
 		},
 		{
-			"path": "../rez"
+			"name": "rez-library",
+			"path": "."
 		}
 	],
 	"settings": {
